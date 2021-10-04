@@ -24,7 +24,9 @@ public class App implements CommandLineRunner
 
     @Override
     public void run(String... args) throws Exception {
-        GreetingsService service = context.getBean(GreetingsService.class);
+        GreetingsService service = (GreetingsService) context.getBean("defaultGreetingsService");
+        service.sayHello("World");
+        service = (GreetingsService) context.getBean("errorGreetingsService");
         service.sayHello("World");
     }
 }

@@ -12,4 +12,9 @@ public class AppConfig {
     public PrintStream stdout(){
         return System.out;
     }
+
+    @Bean
+    public PrintStream stderr(){
+        return System.err;
+    }
 }

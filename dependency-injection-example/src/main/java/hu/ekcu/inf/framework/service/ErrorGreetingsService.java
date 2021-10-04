@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 import java.io.PrintStream;
 
-@Service("defaultGreetingsService")
-public class DefaultGreetingsService extends AbstractGreetingsService{
+@Service("errorGreetingsService")
+public class ErrorGreetingsService extends AbstractGreetingsService{
 
-    public DefaultGreetingsService(@Qualifier("stdout") PrintStream stream) {
+    public ErrorGreetingsService(@Qualifier("stderr") PrintStream stream) {
         super(stream);
     }
 }
