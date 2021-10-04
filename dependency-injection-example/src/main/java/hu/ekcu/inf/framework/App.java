@@ -1,7 +1,6 @@
 package hu.ekcu.inf.framework;
 
 import hu.ekcu.inf.framework.service.GreetingsService;
-import hu.ekcu.inf.framework.service.GreetingsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
