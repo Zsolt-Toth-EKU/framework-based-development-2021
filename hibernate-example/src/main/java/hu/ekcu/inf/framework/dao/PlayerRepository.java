@@ -1,4 +1,4 @@
-package hu.ekcu.inf.framework;
+package hu.ekcu.inf.framework.dao;
 
 import hu.ekcu.inf.framework.dao.entity.PlayerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

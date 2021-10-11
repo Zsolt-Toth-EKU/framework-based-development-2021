@@ -29,4 +29,10 @@ public class PlayerEntity {
 
     @Column(name = "pos")
     private String pos;
+
+    @Column
+    private int height;
+
+    @Column
+    private int weight;
 }
