@@ -1,5 +1,6 @@
 package hu.ekcu.inf.framework;
 
+import hu.ekcu.inf.framework.dao.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
