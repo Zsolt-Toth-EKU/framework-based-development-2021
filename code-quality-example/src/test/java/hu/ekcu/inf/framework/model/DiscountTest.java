@@ -2,10 +2,10 @@ package hu.ekcu.inf.framework.model;
 
 
 import org.assertj.core.data.Offset;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -15,13 +15,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(MockitoExtension.class)
 class DiscountTest {
 
-    final double percentage = 10.0;
+    final double PERCENTAGE = 10.0;
 
     @Mock
     Payable payable;
 
-    @InjectMocks
     Discount discount;
+
+    @BeforeEach
+    void setUp(){
+        this.discount = new Discount(payable, PERCENTAGE);
+    }
 
     @Test
     void shouldDiscountBeInitializedWithTenPercent(){
@@ -29,7 +33,7 @@ class DiscountTest {
         // when
         final double actual = discount.getPercentage();
         // then
-        assertThat(actual).isEqualTo(percentage, Offset.offset(1e-4));
+        assertThat(actual).isEqualTo(PERCENTAGE, Offset.offset(1e-4));
     }
 
     @Test

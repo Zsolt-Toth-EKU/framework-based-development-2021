@@ -9,10 +9,10 @@ public class Discount implements Payable {
     private final Payable payable;
 
     @Getter
-    private final double percentage = 10.0;
+    private final double percentage;
 
     @Override
     public double cost() {
-        return ((100.0 - percentage)/100.0) * payable.cost();
+        return ((100.0 - percentage) / 100.0) * payable.cost();
     }
 }
