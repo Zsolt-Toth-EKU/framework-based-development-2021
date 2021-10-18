@@ -18,7 +18,7 @@ class ShoppingCartTest {
 
     @Test
     @DisplayName("Empty Shopping Cart Happy Path")
-    void shouldEmptyShoppingCartBeFree(){
+    void shouldEmptyShoppingCartBeFree() {
         // given
         final double expected = 0.0;
         // when
@@ -28,15 +28,24 @@ class ShoppingCartTest {
     }
 
     @Test
-    void shouldShoppingCartCostIncreaseWithThePriceOfTheProductInserted(){
+    void shouldShoppingCartCostIncreaseWithThePriceOfTheProductInserted() {
         // given
-        Product product = new UnitProduct("Chocolate Bar", "1234", 10.0);
-        final double expected = 10.0;
+        Product product = TestDataProvider.getChocolateBar();
+        final double expected = TestDataProvider.CHOCOLATE_BAR_UNIT_COST;
         shoppingCart.addProduct(product);
         // when
         final double actual = shoppingCart.cost();
         // then
         assertThat(actual).isEqualTo(expected, Offset.offset(1e-4));
+    }
+
+    private static class TestDataProvider {
+
+        static final double CHOCOLATE_BAR_UNIT_COST = 10.0;
+
+        public static UnitProduct getChocolateBar() {
+            return new UnitProduct("Chocolate Bar", "1234", CHOCOLATE_BAR_UNIT_COST);
+        }
     }
 
 }
