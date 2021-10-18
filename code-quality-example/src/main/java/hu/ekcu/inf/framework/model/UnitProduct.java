@@ -6,6 +6,9 @@ public class UnitProduct extends Product {
 
     public UnitProduct(String name, String id, double cost) {
         super(name, id);
+        if (cost <= 0.0) {
+            throw new IllegalArgumentException("Cost must be positive");
+        }
         this.cost = cost;
     }
 

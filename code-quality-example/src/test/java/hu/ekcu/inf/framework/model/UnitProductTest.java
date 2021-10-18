@@ -39,4 +39,16 @@ class UnitProductTest {
         // then // self validation
     }
 
+    @Test
+    void shouldThrowIllegalArguementExceptionWhenPriceIsNotPositive(){
+        // given
+        final String productName = "Chocolate Bar";
+        final String id = "1234";
+        final double nonPositiveCost = -1.0;
+        // when then
+        assertThatThrownBy(()-> {
+            new UnitProduct(productName, id, nonPositiveCost);
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+
 }
